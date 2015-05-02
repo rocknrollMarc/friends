@@ -1,0 +1,20 @@
+<table class="hoverable">
+    <thead>
+        <tr>
+            <th data-field="id">Name</th>
+            <th data-field="name">Articles</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    {{#each friend in model}}
+    <tr>
+        <td>{{link-to friend.fullName 'friends.show' friend}}</td>
+        <td>{{friend.totalArticles}}</td>
+        <td><a href="#" {{action "delete" friend}}>Delete</a></td>
+    </tr>
+    {{/each}}
+    </tbody>
+</table>
+
+
