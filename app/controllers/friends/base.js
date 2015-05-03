@@ -1,17 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
-  isValid: Ember.computed(
-    'email',
-    'firstName',
-    'lastName',
-    'twitter',
-    function() {
-      return !Ember.isEmpty(this.get('email')) &&
-        !Ember.isEmpty(this.get('firstName')) &&
-        !Ember.isEmpty(this.get('lastName')) &&
-        !Ember.isEmpty(this.get('twitter'));
-    }
+    hasEmail: Ember.computed.notEmpty('model.email'),
+    hasFirstName: Ember.computed.notEmpty('model.firstName'),
+    hasLastName: Ember.computed.notEmpty('model.lastName'),
+    hasTwitter: Ember.computed.notEmpty('model.twitter'),
+  isValid: Ember.computed.and(
+    'hasEmail',
+    'hasFirstName',
+    'hasLastName',
+    'hasTwitter',
   ),
   actions: {
     save: function() {
