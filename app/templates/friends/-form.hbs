@@ -5,9 +5,10 @@
         {{input value=model.lastName placeholder="Last Name"}}<br>
         {{input value=model.email placeholder="Email"}}<br>
         {{input value=model.twitter placeholder="Twitter"}}<br>
-        <input type="submit" value="Save">
-        <button class="btn waves-effect waves-light" {{action "cancel"}}>Cancel
+        <button class="btn waves-effect waves-light"{{action "save"}} >Save
             <i class="mdi-content-send right"></i>
+        </button>
+        <button class="btn waves-effect waves-light" {{action "cancel"}}>Cancel
         </button>
     </fieldset>
 </form>
